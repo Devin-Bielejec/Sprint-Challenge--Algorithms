@@ -38,37 +38,14 @@ c) O(n) - linear
 ## Exercise II
 
 Answer: O(log(n))
-0
-1
-2
-.
-.
-.
-n
 
-if floor > f:
-egg breaks
-else:
-egg alive
-Start at floor: currentFloor = n/2
-If the egg breaks,
-Try again but halfway between 0 and n//2
-so current Floor is currentFloor//2
+top is top
+bottom is bottom
 
-if the egg doesn't break,
-try again but halfway between n/2 and n
-so current Floor is n - currentFloor//2
+try:
+if top = bottom
+return top
 
-```
-def eggBreak(start=0, end, f):
-    dist = end - start
-    if dist == 1:
-        #Base Case
-        return start
-    else:
-        startTest = start + dist//2
-        if startTest > f:
-            eggBreak(start=0, startTest, f)
-        else:
-            eggBreak(start=startTest, end, f)
-```
+    drop egg midway between top and bottom
+    if egg breaks -> top = midway - 1
+    else -> bottom = midway + 1
